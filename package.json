@@ -2,7 +2,7 @@
   "name": "md-table-converter",
   "displayName": "MD Table Converter",
   "description": "Convert MD Table to Table Component",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "liuxueyong123",
 	"author": {
 		"name": "liuxueyong123",
@@ -22,7 +22,7 @@
 		"Table Converter"
 	],
   "engines": {
-    "vscode": "^1.82.0"
+    "vscode": "^1.63.0"
   },
   "categories": [
     "Other"
@@ -68,7 +68,7 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.82.0",
+    "@types/vscode": "^1.63.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
