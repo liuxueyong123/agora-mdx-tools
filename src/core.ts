@@ -1,8 +1,14 @@
 const getCells = (line: string) => {
-  return line
-    .split("|")
-    .slice(1, -1)
-    .map((cell) => cell.trim());
+  const cells = line.split("|").map((cell) => cell.trim());
+
+  if(cells[0] === '') {
+    cells.shift();
+  }
+  if(cells[cells.length - 1] === '') {
+    cells.pop();
+  }
+
+  return cells;
 };
 
 const getHeaders = (lines: string[]) => {
