@@ -2,6 +2,8 @@
 
 Convert MD Table to Table Component
 
+![image](https://web-cdn.agora.io/doc-shengwang/img/changelog/8x8vg-hwhms.gif)
+
 ## Install
 
 Already on the shelves: [marketplace.visualstudio.com](https://marketplace.visualstudio.com/items?itemName=liuxueyong123.md-table-converter)
