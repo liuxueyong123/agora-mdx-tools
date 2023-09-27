@@ -3,6 +3,24 @@
   "displayName": "MD Table Converter",
   "description": "Convert MD Table to Table Component",
   "version": "0.0.1",
+  "publisher": "liuxueyong123",
+	"author": {
+		"name": "liuxueyong123",
+		"email": "liuxueyong123@126.com",
+		"url": "https://github.com/liuxueyong123"
+	},
+	"icon": "assets/icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/liuxueyong123/md-table-converter.git"
+	},
+	"bugs": {
+		"url": "https://github.com/liuxueyong123/md-table-converter/issues/new"
+	},
+	"homepage": "https://github.com/liuxueyong123/md-table-converter",
+	"keywords": [
+		"Table Converter"
+	],
   "engines": {
     "vscode": "^1.82.0"
   },
@@ -20,6 +38,14 @@
         "title": "Covert to Table Component"
       }
     ],
+    "keybindings": [
+			{
+				"command": "md-table-converter.covert2TableComponent",
+				"key": "ctrl+4",
+				"mac": "cmd+4",
+				"when": "editorTextFocus"
+			}
+		],
     "menus": {
       "editor/context": [
         {
@@ -31,13 +57,13 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "pnpm run package",
+    "vscode:prepublish": "yarn run package",
     "compile": "webpack",
     "watch": "webpack --watch",
     "package": "webpack --mode production --devtool hidden-source-map",
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js"
   },

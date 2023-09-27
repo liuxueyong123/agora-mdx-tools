@@ -1,71 +1,85 @@
-# md-table-converter README
+# MD Table Converter
 
-This is the README for your extension "md-table-converter". After writing up a brief description, we recommend including the following sections.
+Convert MD Table to Table Component
 
-## Features
+## Install
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Already on the shelves: [marketplace.visualstudio.com](https://marketplace.visualstudio.com/items?itemName=liuxueyong123.md-table-converter)
 
-For example if there is an image subfolder under your extension project workspace:
+Or you can directly search the vscode extension for md-table-converter installation
 
-\!\[feature X\]\(images/feature-x.png\)
+## Shortcut key
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+mac: `command + 4`
 
-## Requirements
+windows: `ctrl + 4`
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+In case of conflict, users can customize shortcut keys
 
-## Extension Settings
+## Usage
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+After selecting a section of an md table to convert, press the shortcut key (or select `Convert to Table Component` from the right-click menu) to replace the section with a Table component.
 
-For example:
+Example:
 
-This extension contributes the following settings:
+``` md
+|   子功能   | 免费版 | 专业版      | 旗舰版      |
+| :------------------- | :----- |  :---------- | :---------- |
+| 控制台访问           |✔          | ✔           | ✔           |
+| 数据存储时间         | 3 天   | 14 天       | 30 天       |
+| 通话全景页面                 | ✘      |  ✔           | ✔           |
+| 通话调查 RESTful API | ✘      |  专业版 API  | 旗舰版 API  |
+| 内嵌                 | ✘      | ✔         | ✔           |
+```
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+Result：
 
-## Known Issues
+``` jsx
+export const TableHeaderuxsv8ux7a2 = [
+ {
+    label: '子功能'
+  },
+ {
+    label: '免费版'
+  },
+ {
+    label: '专业版'
+  },
+ {
+    label: '旗舰版'
+  }
+];
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+<Table header={TableHeaderuxsv8ux7a2}>
+ <Tr>
+   <Td>控制台访问</Td>
+   <Td>✔</Td>
+   <Td>✔</Td>
+   <Td>✔</Td>
+ </Tr>
+ <Tr>
+   <Td>数据存储时间</Td>
+   <Td>3 天</Td>
+   <Td>14 天</Td>
+   <Td>30 天</Td>
+ </Tr>
+ <Tr>
+   <Td>通话全景页面</Td>
+   <Td>✘</Td>
+   <Td>✔</Td>
+   <Td>✔</Td>
+ </Tr>
+ <Tr>
+   <Td>通话调查 RESTful API</Td>
+   <Td>✘</Td>
+   <Td>专业版 API</Td>
+   <Td>旗舰版 API</Td>
+ </Tr>
+ <Tr>
+   <Td>内嵌</Td>
+   <Td>✘</Td>
+   <Td>✔</Td>
+   <Td>✔</Td>
+ </Tr>
+</Table>
+```
