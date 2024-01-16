@@ -36,6 +36,10 @@
       {
         "command": "md-table-converter.covert2TableComponent",
         "title": "Covert to Table Component"
+      },
+      {
+        "command": "md-table-converter.replaceHeading",
+        "title": "Covert MD Heading to HTML"
       }
     ],
     "keybindings": [
@@ -52,6 +56,12 @@
           "command": "md-table-converter.covert2TableComponent",
           "group": "1_modification",
           "when": "editorHasSelection"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "md-table-converter.replaceHeading",
+          "when": "resourceExtname == .mdx || resourceExtname == ''"
         }
       ]
     }
