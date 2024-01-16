@@ -2,7 +2,7 @@
   "name": "md-table-converter",
   "displayName": "MD Table Converter",
   "description": "Convert MD Table to Table Component",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "publisher": "liuxueyong123",
 	"author": {
 		"name": "liuxueyong123",
@@ -55,7 +55,7 @@
         {
           "command": "md-table-converter.covert2TableComponent",
           "group": "1_modification",
-          "when": "editorHasSelection"
+          "when": "editorHasSelection && resourceExtname == .mdx"
         }
       ],
       "explorer/context": [
