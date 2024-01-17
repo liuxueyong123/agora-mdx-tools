@@ -2,7 +2,7 @@
   "name": "md-table-converter",
   "displayName": "MD Table Converter",
   "description": "Convert MD Table to Table Component",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "publisher": "liuxueyong123",
 	"author": {
 		"name": "liuxueyong123",
@@ -44,6 +44,14 @@
       {
         "command": "md-table-converter.createFilesBySidebar",
         "title": "Create Files By Sidebar File"
+      },
+      {
+        "command": "md-table-converter.replaceRtcApiLink",
+        "title": "Covert Link to RTC API Link"
+      },
+      {
+        "command": "md-table-converter.covert2VersionComp",
+        "title": "Covert MD to Version Component"
       }
     ],
     "keybindings": [
@@ -59,13 +67,23 @@
         {
           "command": "md-table-converter.covert2TableComponent",
           "group": "1_modification",
-          "when": "editorHasSelection && resourceExtname == .mdx"
+          "when": "editorHasSelection && (resourceExtname == .mdx || resourceExtname == .md)"
+        },
+        {
+          "command": "md-table-converter.replaceRtcApiLink",
+          "group": "1_modification",
+          "when": "editorHasSelection && (resourceExtname == .mdx || resourceExtname == .md)"
+        },
+        {
+          "command": "md-table-converter.covert2VersionComp",
+          "group": "1_modification",
+          "when": "editorHasSelection && (resourceExtname == .mdx || resourceExtname == .md)"
         }
       ],
       "explorer/context": [
         {
           "command": "md-table-converter.replaceHeading",
-          "when": "resourceExtname == .mdx || resourceExtname == ''"
+          "when": "resourceExtname == .mdx || resourceExtname == .md || resourceExtname == ''"
         },
         {
           "command": "md-table-converter.createFilesBySidebar",

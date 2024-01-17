@@ -27,7 +27,7 @@ function extractSidebars(items: any[]) {
 }
 
 export async function createFilesBySidebar(filePath: string) {
-  const productFolder = path.resolve(filePath, '../');
+  const productFolder = path.resolve(filePath, `..${path.sep}`);
 
   const content = await fs.readFile(filePath, 'utf-8');
   const context = createContext({
@@ -43,14 +43,14 @@ export async function createFilesBySidebar(filePath: string) {
     const paths = item.path.split('/');
     if(paths.length < 3) {continue;}
 
-    const currentFileFolder = path.resolve(productFolder, `./${paths.slice(2, -1).join('/')}`);
-    const currentFilePath = path.resolve(currentFileFolder, `./${paths.pop()}.mdx`);
+    const currentFileFolder = path.resolve(productFolder, `.${path.sep}${paths.slice(2, -1).join(path.sep)}`);
+    const currentFilePath = path.resolve(currentFileFolder, `.${path.sep}${paths.pop()}.mdx`);
     // 如果文件已经存在，不进行覆盖
     const fileExist = await fs.access(currentFilePath).then(() => true).catch(() => false);
     if(fileExist) {continue;}
 
     await fs.mkdir(currentFileFolder, { recursive: true });
-    const fileContent = `---\ntitle: ${item.title}\n---\n`;
+    const fileContent = `---\r\ntitle: ${item.title}\r\n---\r\n`;
     await fs.writeFile(currentFilePath, fileContent);
   }
 }
