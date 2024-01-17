@@ -2,7 +2,7 @@
   "name": "md-table-converter",
   "displayName": "MD Table Converter",
   "description": "Convert MD Table to Table Component",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "publisher": "liuxueyong123",
 	"author": {
 		"name": "liuxueyong123",
@@ -40,6 +40,10 @@
       {
         "command": "md-table-converter.replaceHeading",
         "title": "Covert MD Heading to HTML"
+      },
+      {
+        "command": "md-table-converter.createFilesBySidebar",
+        "title": "Create Files By Sidebar File"
       }
     ],
     "keybindings": [
@@ -62,6 +66,10 @@
         {
           "command": "md-table-converter.replaceHeading",
           "when": "resourceExtname == .mdx || resourceExtname == ''"
+        },
+        {
+          "command": "md-table-converter.createFilesBySidebar",
+          "when": "resourceExtname == .js"
         }
       ]
     }

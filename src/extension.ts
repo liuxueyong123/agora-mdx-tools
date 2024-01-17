@@ -3,6 +3,7 @@
 import * as vscode from 'vscode';
 import { transformMdTable } from './core';
 import { replaceFileOrFolder } from './replaceHeading';
+import { createFilesBySidebar } from './createFileBySidebar';
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -30,13 +31,27 @@ export function activate(context: vscode.ExtensionContext) {
 		});
 	});
 
-	const disposable2 = vscode.commands.registerCommand('md-table-converter.replaceHeading', (resource) => {
-		replaceFileOrFolder(resource.fsPath);
-		vscode.window.showInformationMessage('标题替换成功！');
+	const disposable2 = vscode.commands.registerCommand('md-table-converter.replaceHeading', async (resource) => {
+		try {
+			await replaceFileOrFolder(resource.fsPath);
+			vscode.window.showInformationMessage('标题替换成功！');
+		} catch (e: any) {
+			vscode.window.showErrorMessage(e.message);
+		}
+	});
+
+	const disposable3 = vscode.commands.registerCommand('md-table-converter.createFilesBySidebar', async (resource) => {
+		try {
+			await createFilesBySidebar(resource.fsPath);
+			vscode.window.showInformationMessage('文件创建成功！');
+		} catch(e: any) {
+			vscode.window.showErrorMessage(e.message);
+		}
 	});
 
 	context.subscriptions.push(disposable);
 	context.subscriptions.push(disposable2);
+	context.subscriptions.push(disposable3);
 }
 
 // This method is called when your extension is deactivated
