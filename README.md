@@ -1,4 +1,4 @@
-# MD Table Converter
+# Agora Mdx Tools
 
 Convert MD Table to Table Component
 
@@ -6,9 +6,9 @@ Convert MD Table to Table Component
 
 ## Install
 
-Already on the shelves: [marketplace.visualstudio.com](https://marketplace.visualstudio.com/items?itemName=liuxueyong123.md-table-converter)
+Already on the shelves: [marketplace.visualstudio.com](https://marketplace.visualstudio.com/items?itemName=liuxueyong123.agora-mdx-tools)
 
-Or you can directly search the vscode extension for md-table-converter installation
+Or you can directly search the vscode extension for agora-mdx-tools installation
 
 ## Shortcut key
 

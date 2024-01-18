@@ -1,7 +1,7 @@
 {
-  "name": "md-table-converter",
-  "displayName": "MD Table Converter",
-  "description": "Convert MD Table to Table Component",
+  "name": "agora-mdx-tools",
+  "displayName": "Agora Mdx Tools",
+  "description": "Agora Mdx Tools",
   "version": "0.1.0",
   "publisher": "liuxueyong123",
 	"author": {
@@ -12,14 +12,14 @@
 	"icon": "assets/icon.png",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/liuxueyong123/md-table-converter.git"
+		"url": "https://github.com/liuxueyong123/agora-mdx-tools.git"
 	},
 	"bugs": {
-		"url": "https://github.com/liuxueyong123/md-table-converter/issues/new"
+		"url": "https://github.com/liuxueyong123/agora-mdx-tools/issues/new"
 	},
-	"homepage": "https://github.com/liuxueyong123/md-table-converter",
+	"homepage": "https://github.com/liuxueyong123/agora-mdx-tools",
 	"keywords": [
-		"Table Converter"
+		"Agora Mdx Tools"
 	],
   "engines": {
     "vscode": "^1.63.0"
@@ -28,39 +28,39 @@
     "Other"
   ],
   "activationEvents": [
-    "md-table-converter.covert2TableComponent"
+    "agora-mdx-tools.covert2TableComponent"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "md-table-converter.covert2TableComponent",
+        "command": "agora-mdx-tools.covert2TableComponent",
         "title": "Covert to Table Component"
       },
       {
-        "command": "md-table-converter.replaceHeadingByFile",
+        "command": "agora-mdx-tools.replaceHeadingByFile",
         "title": "Covert MD Heading to HTML Heading"
       },
       {
-        "command": "md-table-converter.replaceHeading",
+        "command": "agora-mdx-tools.replaceHeading",
         "title": "Covert MD Heading to HTML Heading"
       },
       {
-        "command": "md-table-converter.createFilesBySidebar",
+        "command": "agora-mdx-tools.createFilesBySidebar",
         "title": "Create Files By Sidebar File"
       },
       {
-        "command": "md-table-converter.replaceRtcApiLink",
+        "command": "agora-mdx-tools.replaceRtcApiLink",
         "title": "Covert Link to RTC API Link"
       },
       {
-        "command": "md-table-converter.covert2VersionComp",
+        "command": "agora-mdx-tools.covert2VersionComp",
         "title": "Covert to Version Component"
       }
     ],
     "keybindings": [
 			{
-				"command": "md-table-converter.covert2TableComponent",
+				"command": "agora-mdx-tools.covert2TableComponent",
 				"key": "ctrl+4",
 				"mac": "cmd+4",
 				"when": "editorTextFocus"
@@ -69,33 +69,33 @@
     "menus": {
       "editor/context": [
         {
-          "command": "md-table-converter.covert2TableComponent",
+          "command": "agora-mdx-tools.covert2TableComponent",
           "group": "1_modification",
           "when": "editorHasSelection && (resourceExtname == .mdx || resourceExtname == .md)"
         },
         {
-          "command": "md-table-converter.replaceRtcApiLink",
+          "command": "agora-mdx-tools.replaceRtcApiLink",
           "group": "1_modification",
           "when": "editorHasSelection && (resourceExtname == .mdx || resourceExtname == .md)"
         },
         {
-          "command": "md-table-converter.covert2VersionComp",
+          "command": "agora-mdx-tools.covert2VersionComp",
           "group": "1_modification",
           "when": "editorHasSelection && (resourceExtname == .mdx || resourceExtname == .md)"
         },
         {
-          "command": "md-table-converter.replaceHeading",
+          "command": "agora-mdx-tools.replaceHeading",
           "group": "1_modification",
           "when": "editorHasSelection && (resourceExtname == .mdx || resourceExtname == .md)"
         }
       ],
       "explorer/context": [
         {
-          "command": "md-table-converter.replaceHeadingByFile",
+          "command": "agora-mdx-tools.replaceHeadingByFile",
           "when": "resourceExtname == .mdx || resourceExtname == .md || resourceExtname == ''"
         },
         {
-          "command": "md-table-converter.createFilesBySidebar",
+          "command": "agora-mdx-tools.createFilesBySidebar",
           "when": "resourceExtname == .js"
         }
       ]

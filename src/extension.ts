@@ -13,7 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
 	const disposable = vscode.commands.registerCommand(
-		"md-table-converter.covert2TableComponent",
+		"agora-mdx-tools.covert2TableComponent",
 		() => {
 			const editor = vscode.window.activeTextEditor;
 			if (!editor) {
@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 
 	const disposable2 = vscode.commands.registerCommand(
-		"md-table-converter.replaceHeadingByFile",
+		"agora-mdx-tools.replaceHeadingByFile",
 		async (resource) => {
 			try {
 				await replaceFileOrFolder(resource.fsPath);
@@ -50,7 +50,7 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 
 	const disposable6 = vscode.commands.registerCommand(
-		"md-table-converter.replaceHeading",
+		"agora-mdx-tools.replaceHeading",
 		async () => {
 			const editor = vscode.window.activeTextEditor;
 			if (!editor) {
@@ -75,7 +75,7 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 
 	const disposable3 = vscode.commands.registerCommand(
-		"md-table-converter.createFilesBySidebar",
+		"agora-mdx-tools.createFilesBySidebar",
 		async (resource) => {
 			try {
 				await createFilesBySidebar(resource.fsPath);
@@ -87,7 +87,7 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 
 	const disposable4 = vscode.commands.registerCommand(
-		"md-table-converter.replaceRtcApiLink",
+		"agora-mdx-tools.replaceRtcApiLink",
 		async (resource) => {
 			const editor = vscode.window.activeTextEditor;
 			if (!editor) {
@@ -121,7 +121,7 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 
 	const disposable5 = vscode.commands.registerCommand(
-		"md-table-converter.covert2VersionComp",
+		"agora-mdx-tools.covert2VersionComp",
 		async () => {
 			const editor = vscode.window.activeTextEditor;
 			if (!editor) {
