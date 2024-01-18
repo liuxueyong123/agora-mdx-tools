@@ -91,12 +91,12 @@ Right-click the sidebar configuration file and select 'Create Files By Sidebar C
 
 ### Covert MD Heading to HTML Heading
 
-Select the text you want to convert, then select 'Covert MD Heading to HTML Heading' from the right-click menu.
+Select the text you want to convert, then select 'Covert MD Heading to HTML Heading' from the context (right-click) menu.
 
 ### Covert Link to RTC API Link
 
-Select the text you want to convert, then select 'Covert Link to RTC API Link' from the right-click menu.
+Select the text you want to convert, then select 'Covert Link to RTC API Link' from the context (right-click) menu.
 
 ### Covert to Version Component
 
-Select the text you want to convert, then select 'Covert to Version Component' from the right-click menu.
+Select the text you want to convert, then select 'Covert to Version Component' from the context (right-click) menu.
