@@ -795,9 +795,9 @@ function generateNewLink(
 
 function adjustFormat(text: string) {
   return text
-    .replace(/(\s\[\d\/\d\\\])(\]\(\/api-ref\/rtc.*?\))/g, "$2$1")
-    .replace(/(\s\[\d\/\d)\\\]/g, "$1] ")
-    .replace(/\[(.+?)\](?=\(\/api-ref\/rtc)/g, "[`$1`]");
+    .replace(/(\s\[\d\/\d\\\])(\]\(\/api-ref\/rtc.*?\))/g, '$2$1')
+    .replace(/\s(\[\d\/\d)\\\]/g, '$1]')
+    .replace(/\[([^\[\]\/]*?)\](?=\(\/api-ref\/rtc)/g, '[`$1`]');
 }
 
 export function replaceRtcApiLink(inputText: string, platform: string) {

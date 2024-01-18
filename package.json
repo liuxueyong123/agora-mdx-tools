@@ -2,14 +2,14 @@
   "name": "agora-mdx-tools",
   "displayName": "Agora Mdx Tools",
   "description": "Agora Mdx Tools",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "liuxueyong123",
 	"author": {
 		"name": "liuxueyong123",
 		"email": "liuxueyong123@126.com",
 		"url": "https://github.com/liuxueyong123"
 	},
-	"icon": "assets/icon.png",
+	"icon": "assets/icon-new.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/liuxueyong123/agora-mdx-tools.git"
