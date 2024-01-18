@@ -1,26 +1,25 @@
 # Agora Mdx Tools
 
-Convert MD Table to Table Component
-
-![image](https://web-cdn.agora.io/doc-shengwang/img/changelog/8x8vg-hwhms.gif)
-
 ## Install
 
 Already on the shelves: [marketplace.visualstudio.com](https://marketplace.visualstudio.com/items?itemName=liuxueyong123.agora-mdx-tools)
 
 Or you can directly search the vscode extension for agora-mdx-tools installation
 
-## Shortcut key
+## Usage
 
-mac: `command + 4`
+### Convert MD Table to Table Component
 
-windows: `ctrl + 4`
+After selecting a section of an md table to convert, press the shortcut key (or select `Convert to Table Component` from the right-click menu) to replace the section with a Table component.
+
+**Shortcut key**
+
+- mac: `command + 4`
+- windows: `ctrl + 4`
 
 In case of conflict, users can customize shortcut keys
 
-## Usage
-
-After selecting a section of an md table to convert, press the shortcut key (or select `Convert to Table Component` from the right-click menu) to replace the section with a Table component.
+![image](https://web-cdn.agora.io/doc-shengwang/img/changelog/8x8vg-hwhms.gif)
 
 Example:
 
@@ -85,3 +84,19 @@ export const TableHeaderuxsv8ux7a2 = [
  </Tr>
 </Table>
 ```
+
+### Create files by sidebar config
+
+Right-click the sidebar configuration file and select 'Create Files By Sidebar Config' to generate initial mdx files based on the configuration file.
+
+### Covert MD Heading to HTML Heading
+
+Select the text you want to convert, then select 'Covert MD Heading to HTML Heading' from the right-click menu.
+
+### Covert Link to RTC API Link
+
+Select the text you want to convert, then select 'Covert Link to RTC API Link' from the right-click menu.
+
+### Covert to Version Component
+
+Select the text you want to convert, then select 'Covert to Version Component' from the right-click menu.

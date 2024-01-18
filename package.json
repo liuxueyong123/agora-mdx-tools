@@ -2,7 +2,7 @@
   "name": "agora-mdx-tools",
   "displayName": "Agora Mdx Tools",
   "description": "Agora Mdx Tools",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "liuxueyong123",
 	"author": {
 		"name": "liuxueyong123",
@@ -47,7 +47,7 @@
       },
       {
         "command": "agora-mdx-tools.createFilesBySidebar",
-        "title": "Create Files By Sidebar File"
+        "title": "Create Files By Sidebar Config"
       },
       {
         "command": "agora-mdx-tools.replaceRtcApiLink",
