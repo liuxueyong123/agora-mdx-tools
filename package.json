@@ -2,7 +2,7 @@
   "name": "agora-mdx-tools",
   "displayName": "Agora Mdx Tools",
   "description": "Agora Mdx Tools",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publisher": "liuxueyong123",
 	"author": {
 		"name": "liuxueyong123",
@@ -28,7 +28,7 @@
     "Other"
   ],
   "activationEvents": [
-    "agora-mdx-tools.covert2TableComponent"
+    "onStartupFinished"
   ],
   "main": "./dist/extension.js",
   "contributes": {

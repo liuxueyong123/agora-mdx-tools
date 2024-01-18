@@ -1,10 +1,11 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
-import { transformMdTable } from "./core";
+import { transformMdTable } from "./transformMdTable";
 import { replaceFileOrFolder, replaceMdxHeading } from "./replaceHeading";
 import { createFilesBySidebar } from "./createFileBySidebar";
-import { covert2VersionComp, replaceRtcApiLink } from "./versionComponent";
+import { replaceRtcApiLink } from "./replaceRtcApiLink";
+import { covert2VersionComp } from "./covert2VersionComp";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
