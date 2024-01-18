@@ -10,7 +10,7 @@ function replaceH3(_match: string, p1: string) {
 }
 
 export function replaceMdxHeading(content: string) {
-  return content.replace(/^### (.+)/g, replaceH3).replace( /^## (.+)/g, replaceH2);
+  return content.replace(/(?<!#)### (.+)/g, replaceH3).replace(/(?<!#)## (.+)/g, replaceH2);
 }
 
 async function replaceFileMdxHeading(filePath: string) {

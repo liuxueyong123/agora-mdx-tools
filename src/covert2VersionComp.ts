@@ -26,7 +26,7 @@ export function covert2VersionComp(inputText: string) {
 
   // 版本号套用 VersionSection 组件
   outputText = outputText.replace(
-    /^##\s(.+?)(\r\n|\n|\r)/g,
+    /(?<!#)##\s(.+?)(\r\n|\n|\r)/g,
     '</VersionSection>\r\n\r\n<VersionSection version="$1">\r\n'
   );
   // 将第一个 </VersionSection> 移动至内容最后
