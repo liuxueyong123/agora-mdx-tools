@@ -2,7 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
 import { transformMdTable } from "./core";
-import { replaceFileOrFolder } from "./replaceHeading";
+import { replaceFileOrFolder, replaceMdxHeading } from "./replaceHeading";
 import { createFilesBySidebar } from "./createFileBySidebar";
 import { covert2VersionComp, replaceRtcApiLink } from "./versionComponent";
 
@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 
 	const disposable2 = vscode.commands.registerCommand(
-		"md-table-converter.replaceHeading",
+		"md-table-converter.replaceHeadingByFile",
 		async (resource) => {
 			try {
 				await replaceFileOrFolder(resource.fsPath);
@@ -46,6 +46,31 @@ export function activate(context: vscode.ExtensionContext) {
 			} catch (e: any) {
 				vscode.window.showErrorMessage(e.message);
 			}
+		}
+	);
+
+	const disposable6 = vscode.commands.registerCommand(
+		"md-table-converter.replaceHeading",
+		async () => {
+			const editor = vscode.window.activeTextEditor;
+			if (!editor) {
+				return;
+			}
+			const allSelections = editor.selections;
+
+			editor.edit((editBuilder) => {
+				// 遍历并替换文本
+				allSelections.forEach((selection) => {
+					try {
+						const text = editor.document.getText(selection);
+						editBuilder.replace(selection, replaceMdxHeading(text));
+						vscode.window.showInformationMessage("Convert successfully!");
+					} catch (e: any) {
+						vscode.window.showErrorMessage(e.message);
+						return;
+					}
+				});
+			});
 		}
 	);
 
@@ -65,8 +90,7 @@ export function activate(context: vscode.ExtensionContext) {
 		"md-table-converter.replaceRtcApiLink",
 		async (resource) => {
 			const editor = vscode.window.activeTextEditor;
-			const fsPath = resource.fsPath;
-			if (!editor && !fsPath) {
+			if (!editor) {
 				return;
 			}
 
@@ -79,24 +103,20 @@ export function activate(context: vscode.ExtensionContext) {
 				return;
 			}
 
-			if(editor) {
-				const allSelections = editor.selections;
-				editor.edit((editBuilder) => {
-					// 遍历并替换文本
-					allSelections.forEach((selection) => {
-						try {
-							const text = editor.document.getText(selection);
-							editBuilder.replace(selection, replaceRtcApiLink(text, platform));
-							vscode.window.showInformationMessage("Convert successfully!");
-						} catch (e: any) {
-							vscode.window.showErrorMessage(e.message);
-							return;
-						}
-					});
+			const allSelections = editor.selections;
+			editor.edit((editBuilder) => {
+				// 遍历并替换文本
+				allSelections.forEach((selection) => {
+					try {
+						const text = editor.document.getText(selection);
+						editBuilder.replace(selection, replaceRtcApiLink(text, platform));
+						vscode.window.showInformationMessage("Convert successfully!");
+					} catch (e: any) {
+						vscode.window.showErrorMessage(e.message);
+						return;
+					}
 				});
-			} else {
-				// TODO: 支持文件右键菜单
-			}
+			});
 		}
 	);
 
@@ -127,6 +147,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(disposable);
 	context.subscriptions.push(disposable2);
+	context.subscriptions.push(disposable6);
 	context.subscriptions.push(disposable3);
 	context.subscriptions.push(disposable4);
 	context.subscriptions.push(disposable5);
